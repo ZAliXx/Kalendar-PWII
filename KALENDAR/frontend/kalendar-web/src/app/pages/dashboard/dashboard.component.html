@@ -1,0 +1,43 @@
+<div class="kd-bg">
+  <div class="kd-bg__overlay"></div>
+
+  <kd-navbar></kd-navbar>
+
+  <main class="kd-page">
+    <header class="kd-page__header">
+      <div>
+        <h1 class="kd-display kd-page__title">¡안녕하세요, {{ userName }}!</h1>
+        <p class="kd-page__subtitle">Esto es lo que tienes en tu calendario.</p>
+      </div>
+      <a routerLink="/crear" class="kd-page__cta">
+        <kd-button variant="primary">+ Nueva publicación</kd-button>
+      </a>
+    </header>
+
+    <section class="kd-grid" *ngIf="publications.length > 0; else empty">
+      <kd-card *ngFor="let pub of publications" class="kd-pub">
+        <div class="kd-pub__top">
+          <span class="kd-pub__tag">{{ pub.tag }}</span>
+          <span class="kd-pub__date">{{ pub.date }}</span>
+        </div>
+        <h3 class="kd-display kd-pub__title">{{ pub.title }}</h3>
+        <p class="kd-pub__excerpt">{{ pub.excerpt }}</p>
+        <div class="kd-pub__actions">
+          <button class="kd-pub__icon-btn" aria-label="Editar">Edit</button>
+          <button class="kd-pub__icon-btn" aria-label="Eliminar" (click)="deletePublication(pub.id)">Delete</button>
+        </div>
+      </kd-card>
+    </section>
+
+    <ng-template #empty>
+      <kd-card class="kd-empty">
+        <p class="kd-empty__emoji"></p>
+        <h3 class="kd-display">Todavía no tienes publicaciones</h3>
+        <p class="kd-page__subtitle">Crea la primera para empezar a llenar tu calendario.</p>
+        <a routerLink="/crear">
+          <kd-button variant="primary">Crear publicación</kd-button>
+        </a>
+      </kd-card>
+    </ng-template>
+  </main>
+</div>

@@ -1,0 +1,10 @@
+.kd-card {
+  background: var(--kd-surface);
+  border: 1px solid var(--kd-border);
+  border-radius: var(--kd-radius-lg);
+  box-shadow: var(--kd-shadow-card);
+}
+
+.kd-card--padded {
+  padding: var(--kd-space-4);
+}

@@ -1,0 +1,55 @@
+/* ============================================================
+   KALENDAR — Design tokens
+   Importa este archivo una sola vez en styles.css / angular.json
+   ============================================================ */
+
+:root {
+  /* Color */
+  --kd-ink: #241934;          /* texto principal, no negro puro */
+  --kd-ink-soft: #5b4d6b;      /* texto secundario */
+  --kd-muted: #8a7c99;         /* placeholders, hints */
+  --kd-surface: #ffffff;
+  --kd-surface-glass: rgba(255, 255, 255, 0.86);
+  --kd-border: #e7e1ef;
+
+  --kd-accent: #c6558b;        /* frambuesa — acción primaria */
+  --kd-accent-2: #6c4ab6;      /* violeta — gradientes / hover */
+  --kd-accent-gradient: linear-gradient(135deg, var(--kd-accent) 0%, var(--kd-accent-2) 100%);
+
+  --kd-danger: #c4453b;
+  --kd-success: #3f8f5f;
+
+  /* Tipografía */
+  --kd-font-display: "Fraunces", Georgia, serif;
+  --kd-font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Radios y sombras (consistentes en toda la app) */
+  --kd-radius-sm: 8px;
+  --kd-radius-md: 14px;
+  --kd-radius-lg: 22px;
+  --kd-shadow-card: 0 12px 32px rgba(36, 25, 52, 0.12);
+  --kd-shadow-soft: 0 4px 14px rgba(36, 25, 52, 0.08);
+
+  --kd-space-1: 4px;
+  --kd-space-2: 8px;
+  --kd-space-3: 16px;
+  --kd-space-4: 24px;
+  --kd-space-5: 40px;
+}
+
+/* Google Fonts — agrégalo en index.html (más rápido que @import):
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+*/
+
+body {
+  font-family: var(--kd-font-body);
+  color: var(--kd-ink);
+  margin: 0;
+}
+
+h1, h2, h3, .kd-display {
+  font-family: var(--kd-font-display);
+  letter-spacing: -0.01em;
+}

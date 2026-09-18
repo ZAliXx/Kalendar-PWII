@@ -1,0 +1,54 @@
+<div class="kd-bg">
+  <div class="kd-bg__overlay"></div>
+
+  <kd-navbar></kd-navbar>
+
+  <main class="kd-page">
+    <h1 class="kd-display kd-page__title">Tu perfil</h1>
+    <p class="kd-page__subtitle">Así te van a ver en Kalendar.</p>
+
+    <kd-card class="kd-profile-card">
+      <div class="kd-avatar">{{ initials }}</div>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="kd-form">
+        <div class="kd-field">
+          <label for="name">Nombre</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            [class.kd-field__input--error]="name.invalid && name.touched"
+          />
+          <span class="kd-field__error" *ngIf="name.invalid && name.touched">
+            Ingresa tu nombre.
+          </span>
+        </div>
+
+        <div class="kd-field">
+          <label for="email">Correo electrónico</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            [class.kd-field__input--error]="email.invalid && email.touched"
+          />
+          <span class="kd-field__error" *ngIf="email.invalid && email.touched">
+            Ingresa un correo válido.
+          </span>
+        </div>
+
+        <div class="kd-field">
+          <label for="bio">Bio</label>
+          <textarea id="bio" formControlName="bio" rows="3" placeholder="Cuéntanos de ti..."></textarea>
+        </div>
+
+        <div class="kd-form__actions">
+          <span class="kd-form__saved" *ngIf="saved">Guardado ♡</span>
+          <kd-button type="submit" variant="primary" [loading]="saving">
+            Guardar cambios
+          </kd-button>
+        </div>
+      </form>
+    </kd-card>
+  </main>
+</div>

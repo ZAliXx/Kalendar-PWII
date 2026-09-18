@@ -1,0 +1,124 @@
+.kd-bg {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('/FDash.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.kd-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 227, 239, 0.65) 100%
+  );
+  z-index: 0;
+}
+
+.kd-page {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--kd-space-5);
+}
+
+.kd-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--kd-space-4);
+  margin-bottom: var(--kd-space-5);
+  flex-wrap: wrap;
+}
+
+.kd-page__title {
+  font-size: 1.8rem;
+  margin: 0 0 4px 0;
+}
+
+.kd-page__subtitle {
+  color: var(--kd-ink-soft);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.kd-page__cta {
+  text-decoration: none;
+}
+
+.kd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--kd-space-4);
+}
+
+.kd-pub__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--kd-space-2);
+}
+
+.kd-pub__tag {
+  background: var(--kd-accent-soft);
+  color: var(--kd-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--kd-radius-pill);
+}
+
+.kd-pub__date {
+  color: var(--kd-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.kd-pub__title {
+  font-size: 1.15rem;
+  margin: 0 0 6px 0;
+}
+
+.kd-pub__excerpt {
+  color: var(--kd-ink-soft);
+  font-size: 0.9rem;
+  margin: 0 0 var(--kd-space-3) 0;
+  line-height: 1.5;
+}
+
+.kd-pub__actions {
+  display: flex;
+  gap: var(--kd-space-2);
+  border-top: 1px solid var(--kd-border);
+  padding-top: var(--kd-space-2);
+}
+
+.kd-pub__icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: var(--kd-radius-sm);
+  transition: background 0.15s ease;
+}
+
+.kd-pub__icon-btn:hover {
+  background: var(--kd-accent-soft);
+}
+
+.kd-empty {
+  text-align: center;
+  padding: var(--kd-space-5);
+  max-width: 420px;
+  margin: var(--kd-space-5) auto;
+}
+
+.kd-empty__emoji {
+  font-size: 2.5rem;
+  margin: 0 0 var(--kd-space-2) 0;
+}

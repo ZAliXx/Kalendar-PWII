@@ -1,0 +1,75 @@
+.kd-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kd-space-2);
+  height: 46px;
+  padding: 0 var(--kd-space-4);
+  border-radius: var(--kd-radius-md);
+  border: 1px solid transparent;
+  font-family: var(--kd-font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.kd-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.kd-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.kd-btn--primary {
+  background: var(--kd-accent-gradient);
+  color: #fff;
+  box-shadow: var(--kd-shadow-soft);
+}
+
+.kd-btn--primary:hover:not(:disabled) {
+  box-shadow: 0 8px 20px rgba(198, 85, 139, 0.35);
+}
+
+.kd-btn--secondary {
+  background: var(--kd-surface);
+  color: var(--kd-ink);
+  border-color: var(--kd-border);
+}
+
+.kd-btn--secondary:hover:not(:disabled) {
+  border-color: var(--kd-accent);
+  color: var(--kd-accent);
+}
+
+.kd-btn--ghost {
+  background: transparent;
+  color: var(--kd-ink-soft);
+}
+
+.kd-btn--ghost:hover:not(:disabled) {
+  color: var(--kd-accent);
+}
+
+.kd-btn__label--hidden {
+  visibility: hidden;
+}
+
+.kd-btn__spinner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  animation: kd-spin 0.7s linear infinite;
+}
+
+@keyframes kd-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

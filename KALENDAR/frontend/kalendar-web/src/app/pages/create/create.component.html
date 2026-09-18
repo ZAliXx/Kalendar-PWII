@@ -1,0 +1,71 @@
+<div class="kd-bg">
+  <div class="kd-bg__overlay"></div>
+
+  <kd-navbar></kd-navbar>
+
+  <main class="kd-page">
+    <h1 class="kd-display kd-page__title">Crear publicación ♡</h1>
+    <p class="kd-page__subtitle">Agrégala a tu calendario en un momento.</p>
+
+    <kd-card class="kd-form-card">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="kd-form">
+        <div class="kd-field">
+          <label for="title">Título</label>
+          <input
+            id="title"
+            type="text"
+            formControlName="title"
+            placeholder="¿De qué trata tu publicación?"
+            [class.kd-field__input--error]="title.invalid && title.touched"
+          />
+          <span class="kd-field__error" *ngIf="title.invalid && title.touched">
+            Escribe un título de al menos 3 caracteres.
+          </span>
+        </div>
+
+        <div class="kd-form__row">
+          <div class="kd-field">
+            <label for="date">Fecha</label>
+            <input
+              id="date"
+              type="date"
+              formControlName="date"
+              [class.kd-field__input--error]="date.invalid && date.touched"
+            />
+            <span class="kd-field__error" *ngIf="date.invalid && date.touched">
+              Selecciona una fecha.
+            </span>
+          </div>
+
+          <div class="kd-field">
+            <label for="category">Categoría</label>
+            <select id="category" formControlName="category">
+              <option *ngFor="let c of categorias" [value]="c">{{ c }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="kd-field">
+          <label for="content">Contenido</label>
+          <textarea
+            id="content"
+            formControlName="content"
+            rows="6"
+            placeholder="Escribe los detalles aquí..."
+            [class.kd-field__input--error]="content.invalid && content.touched"
+          ></textarea>
+          <span class="kd-field__error" *ngIf="content.invalid && content.touched">
+            Escribe al menos 10 caracteres.
+          </span>
+        </div>
+
+        <div class="kd-form__actions">
+          <a routerLink="/dashboard" class="kd-form__cancel">Cancelar</a>
+          <kd-button type="submit" variant="primary" [loading]="loading">
+            Publicar
+          </kd-button>
+        </div>
+      </form>
+    </kd-card>
+  </main>
+</div>

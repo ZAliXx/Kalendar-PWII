@@ -1,0 +1,11 @@
+<button
+  class="kd-btn"
+  [class]="'kd-btn--' + variant"
+  [type]="type"
+  [disabled]="disabled || loading"
+>
+  <span *ngIf="loading" class="kd-btn__spinner" aria-hidden="true"></span>
+  <span [class.kd-btn__label--hidden]="loading">
+    <ng-content></ng-content>
+  </span>
+</button>

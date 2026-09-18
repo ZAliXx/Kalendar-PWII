@@ -1,0 +1,222 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.kd-auth {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  min-height: 100vh;
+}
+
+/* --- Lado visual: TU imagen de fondo va aquí --- */
+.kd-auth__visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--kd-space-5);
+  color: #fff;
+  background-image: url('/FLogIn.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.kd-auth__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    190deg,
+    rgba(167, 139, 250, 0.18) 0%,
+    rgba(59, 42, 74, 0.72) 100%
+  );
+}
+
+.kd-auth__overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Ctext x='10' y='30' font-size='20' fill='white' opacity='0.5'%3E%E2%99%A1%3C/text%3E%3Ctext x='90' y='80' font-size='14' fill='white' opacity='0.4'%3E%E2%99%A1%3C/text%3E%3Ctext x='40' y='120' font-size='16' fill='white' opacity='0.45'%3E%E2%99%A1%3C/text%3E%3Ctext x='120' y='30' font-size='12' fill='white' opacity='0.35'%3E%E2%99%A1%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.kd-auth__brand {
+  position: relative;
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--kd-space-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-shadow:
+    2px 2px 0 var(--kd-accent),
+    -1px -1px 0 rgba(255, 255, 255, 0.4),
+    4px 6px 10px rgba(59, 42, 74, 0.35);
+}
+
+.kd-heart {
+  color: var(--kd-accent);
+  font-size: 1.5rem;
+}
+
+.kd-auth__tagline {
+  position: relative;
+  max-width: 32ch;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 var(--kd-space-4) 0;
+}
+
+/* --- Panel del formulario --- */
+.kd-auth__panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--kd-space-5);
+  background: var(--kd-surface);
+}
+
+.kd-auth__form {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kd-space-3);
+}
+
+.kd-auth__title {
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.kd-auth__subtitle {
+  margin: 0 0 var(--kd-space-2) 0;
+  color: var(--kd-ink-soft);
+  font-size: 0.95rem;
+}
+
+.kd-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kd-space-1);
+}
+
+.kd-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--kd-ink-soft);
+}
+
+.kd-field input {
+  height: 48px;
+  padding: 0 var(--kd-space-3);
+  border-radius: var(--kd-radius-pill);
+  border: 2px solid var(--kd-border);
+  font-family: var(--kd-font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--kd-ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kd-field input::placeholder {
+  color: var(--kd-muted);
+  font-weight: 400;
+}
+
+.kd-field input:focus {
+  outline: none;
+  border-color: var(--kd-accent);
+  box-shadow: 0 0 0 4px var(--kd-accent-soft);
+}
+
+.kd-field__input--error {
+  border-color: var(--kd-danger) !important;
+}
+
+.kd-field__error {
+  font-size: 0.8rem;
+  color: var(--kd-danger);
+}
+
+.kd-field__password {
+  position: relative;
+  display: flex;
+}
+
+.kd-field__password input {
+  flex: 1;
+  padding-right: 56px;
+}
+
+.kd-field__toggle {
+  position: absolute;
+  right: var(--kd-space-2);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--kd-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.kd-auth__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.kd-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--kd-space-1);
+  color: var(--kd-ink-soft);
+  cursor: pointer;
+}
+
+.kd-auth__link {
+  color: var(--kd-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.kd-auth__error {
+  color: var(--kd-danger);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.kd-auth__switch {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--kd-ink-soft);
+  margin: 0;
+}
+
+.kd-auth__switch a {
+  color: var(--kd-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .kd-auth {
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px 1fr;
+  }
+
+  .kd-auth__panel {
+    border-radius: var(--kd-radius-lg) var(--kd-radius-lg) 0 0;
+    margin-top: -24px;
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--kd-shadow-card);
+  }
+}

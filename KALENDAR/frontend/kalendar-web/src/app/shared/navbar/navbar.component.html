@@ -1,0 +1,14 @@
+<header class="kd-nav">
+  <a class="kd-nav__brand kd-display" routerLink="/dashboard">Kalendar</a>
+
+  <button class="kd-nav__toggle" (click)="toggleMenu()" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="kd-nav__links" [class.kd-nav__links--open]="menuOpen">
+    <a routerLink="/dashboard" routerLinkActive="is-active">Dashboard</a>
+    <a routerLink="/crear" routerLinkActive="is-active">Crear</a>
+    <a routerLink="/perfil" routerLinkActive="is-active">Perfil</a>
+    <a routerLink="/login" class="kd-nav__logout">Cerrar sesión</a>
+  </nav>
+</header>
